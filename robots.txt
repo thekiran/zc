@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /termeni-si-conditii.html
+Disallow: /politica-de-confidentialitate.html
+
+Sitemap: sitemap.xml
