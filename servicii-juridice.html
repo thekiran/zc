@@ -157,7 +157,7 @@
 						<div id="rev_slider_1_1" data-version="5.0">
 							<ul>
 								<li data-transition="fade">
-									<img src="img/slider/zgripcea_constantin_servicii_juridice.jpg" class="rev-slidebg"
+									<img src="img/slider/zgripcea_constantin_servicii_juridice-m.jpg" class="rev-slidebg"
 										alt="Zgripcea si Constantin Servicii Juridice" />
 									<!-- LAYER NR. 1 -->
 									<div class="tp-caption tp-resizeme with_shape" id="slide-home11-descr"
@@ -728,6 +728,13 @@
 				BGImagesObserver.observe(bgImges);
 			});
 
+			
+			// desktop Images for slider
+			if($(window).width() > 576){
+		
+				$('.tp-bgimg').eq(0).css('backgroundImage', 'url(img/slider/zgripcea_constantin_servicii_juridice.jpg)');
+			
+			} 
 		}
 	</script>
 </body>

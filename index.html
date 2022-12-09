@@ -160,7 +160,8 @@
 					<div id="rev_slider_1_1" data-version="5.0">
 						<ul>
 							<li data-transition="fade">
-								<img src="img/slider/slider_11.jpg" class="rev-slidebg" alt="Avocat Gabriel Zgripcea" />
+								<img src="img/slider/slider_11-m.jpg" data-src="img/slider/slider_11.jpg"
+									class="rev-slidebg" id="dimg" alt="Avocat Gabriel Zgripcea" />
 								<!-- LAYER NR. 1 -->
 								<div class="tp-caption tp-resizeme with_shape" id="slide-home11-descr"
 									data-x="['left','left','left','left']" data-hoffset="['15','100','30','15']"
@@ -204,7 +205,8 @@
 
 							</li>
 							<li data-transition="fade">
-								<img src="img/slider/slider_12.jpg" class="rev-slidebg" alt="Avocat Doina Constantin" />
+								<img src="img/slider/slider_12-m.jpg" data-src="img/slider/slider_12.jpg"
+									class="rev-slidebg d-img" alt="Avocat Doina Constantin" />
 								<!-- LAYER NR. 1 -->
 								<div class="tp-caption tp-resizeme with_shape" id="slide-home12-descr"
 									data-x="['left','left','left','left']" data-hoffset="['15','100','30','15']"
@@ -628,7 +630,11 @@
 												<div class="col-md-12">
 													<textarea name="message"
 														placeholder="Ce intrebari ai pentru noi? Acordam fiecarui caz  atentia cuvenita! "></textarea>
-													<div class="text-center"><input type="submit"
+													
+														<div class="g-recaptcha" data-sitekey="6LfJ_GgjAAAAAMYiHAcbmkTu8pV90vVixoAQDYEm"></div>
+														<br/>
+
+														<div class="text-center"><input type="submit"
 															value="Trimite Mesajul"></div>
 												</div>
 											</div>
@@ -752,15 +758,10 @@
 	<!-- Plugins -->
 	<script src="js/plugins-bundle.js"></script>
 
-	<!-- REVOLUTION JS FILES -->
-	<!-- <script src="revolution/js/jquery.themepunch.tools.min.js"></script> -->
-	<!-- <script src="revolution/js/jquery.themepunch.revolution.min.js"></script> -->
-
-
 	<!-- SLIDER REVOLUTION 5.0 EXTENSIONS
         (Load Extensions only on Local File Systems !
         The following part can be removed on Server for On Demand Loading) -->
-	<!-- <script src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
+	<script src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
 	<script src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
 	<script src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
 	<script src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
@@ -768,7 +769,7 @@
 	<script src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
 	<script src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
 	<script src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-	<script src="revolution/js/extensions/revolution.extension.video.min.js"></script> -->
+	<script src="revolution/js/extensions/revolution.extension.video.min.js"></script>
 
 
 
@@ -791,7 +792,7 @@
 	<!-- Slick -->
 	<!-- <script src="js/plugins/slick.min.js"></script> -->
 
-
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<!-- Main script -->
 	<script src="js/main.js"></script>
 
@@ -820,6 +821,13 @@
 				imageObserver.observe(image);
 			});
 
+
+			// desktop Images for slider
+			if ($(window).width() > 576) {
+				$('.tp-bgimg').eq(0).css('backgroundImage', 'url(img/slider/slider_11.jpg)');
+				$('.tp-bgimg').eq(1).css('backgroundImage', 'url(img/slider/slider_12.jpg)');
+
+			}
 
 		}
 	</script>

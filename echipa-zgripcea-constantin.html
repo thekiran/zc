@@ -153,7 +153,7 @@
 				<div class="row">
 					<div class="col-lg-6 col-xl-6">
 						<div class="img-wrapp">
-							<img src="img/front_img/echipa_zgripcea_constantin.jpg" alt="">
+							<img class="dimg" src="img/front_img/echipa_zgripcea_constantin-m.jpg" alt="">
 						</div>
 					</div>
 					<div class="col-lg-6 col-xl-6">
@@ -472,6 +472,18 @@
 			lazyloadBGImages.forEach(function (bgImges) {
 				BGImagesObserver.observe(bgImges);
 			});
+			
+			
+			
+			
+			// desktop Images for slider
+			if($(window).width() > 576){
+				$('.dimg').css('backgroundImage', 'url(img/front_img/echipa_zgripcea_constantin.jpg)');
+				
+			} 
+
+
+
 
 		}
 	</script>
