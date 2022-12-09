@@ -236,17 +236,42 @@
 			return false;
 		});
 
+		// Recaptcha Loading
+			const tr = document.querySelector('#trigger')
+	
+			if(tr) {
+
+				const TriggerObserver = new IntersectionObserver(function (entries, observer) {
+					entries.forEach(function (entry) {
+						if (entry.isIntersecting) {
+							
+							// console.log('triggered')
+
+							const script = document.createElement('script')
+							script.src = 'https://www.google.com/recaptcha/api.js';
+							
+							document.head.appendChild(script);
+		
+							TriggerObserver.unobserve(tr);
+						}
+					});
+				});
+		
+				TriggerObserver.observe(tr);
+
+			}
+			
+
+
+
+
 		// Contact form
 
-		// window.onloadCallback = function() {
-		// 	// alert("grecaptcha is ready!");
-		// 		jQuery('#note').html('<div class="notification_ok">reCAPTCHA completed.</div>');
-
-		// };
-
 		if (jQuery('.contact_form').size() > 0) {
+
+
 			jQuery("#ajax-contact-form").on("submit", function () {
-				
+
 				jQuery('#note').html('');
 
 				var str = $(this).serialize();
@@ -280,7 +305,7 @@
 				} else {
 
 					jQuery('#note').html('<div class="notification_error">Please complete the reCAPTCHA.</div>');
-				
+
 				}
 
 				// $.ajax({

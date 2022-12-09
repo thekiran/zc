@@ -162,6 +162,7 @@
 					        <div class="contact_form">
 							<div id="note"></div>
 							<div id="fields">
+								<div id="trigger" style="height: 50px;width: 50px;background-color: transparent;"></div>
 								<form id="ajax-contact-form" action="#">
 									<div class="row">
 										<div class="col-md-6"><input type="text" name="name" value="" placeholder="Nume *" /></div>
@@ -170,6 +171,9 @@
 												<div class="col-md-6"><input type="text" name="subject" value="" placeholder="Subiect" /></div>
 										<div class="col-md-12">
 											<textarea name="message" placeholder="Message *"></textarea>
+											
+											<div class="g-recaptcha" data-sitekey="6LfJ_GgjAAAAAMYiHAcbmkTu8pV90vVixoAQDYEm"></div>
+											<br/>
 											<input type="submit" value="Trimite Mesajul">
 										</div>
 									</div>
