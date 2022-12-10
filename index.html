@@ -36,12 +36,24 @@
 	<!--  Unused CSS-->
 	<!-- <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css"> -->
 
-
-	<link rel="stylesheet" type="text/css" href="css/fonts.css">
-	<link rel="stylesheet" type="text/css" href="css/bundle.css">
-
 	<!-- JQuery -->
 	<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+
+
+
+	<!-- <link rel="preload" href="fonts/fontawesome-webfont.woff2" as="font"> -->
+	<link rel="stylesheet" type="text/css" href="css/fonts.css" media="print" onload="this.media='all'">
+
+	<link rel="preload" href="css/bundle.css" as="style">
+	<link rel="stylesheet" type="text/css" href="css/bundle.css" media="print" onload="this.media='all'">
+	
+	
+	<link rel="preload" href="js/plugins-bundle.js" as="script">
+	<script src="js/plugins-bundle.js"></script>
+
+	<link rel="preload" href="img/slider/slider_11-m.jpg" as="image">
+	<img src="img/slider/slider_11-m.jpg" style="display: none">
+	
 </head>
 
 <body>
@@ -757,7 +769,7 @@
 
 
 	<!-- Plugins -->
-	<script src="js/plugins-bundle.js"></script>
+	<!-- <script src="js/plugins-bundle.js"></script> -->
 
 	<!-- SLIDER REVOLUTION 5.0 EXTENSIONS
         (Load Extensions only on Local File Systems !
@@ -798,11 +810,107 @@
 	<script src="js/main.js"></script>
 
 
-	<script src="revolution/js/rvstart.js"></script>
-
+	<!-- <script src="revolution/js/rvstart.js"></script> -->
 	<script>
 
-		window.onload = function () {
+var	revapi1,
+	tpj;
+jQuery(function() {
+	tpj = jQuery;
+
+	/* Home */
+	if(tpj("#rev_slider_1_1").length){
+		revapi1 = tpj("#rev_slider_1_1").show().revolution({
+			sliderType:"standard",
+			sliderLayout:"fullwidth",
+			delay:9000,
+			navigation: {
+				arrows:{
+					enable:false
+				},
+				bullets: {
+					enable:true,
+					hide_onleave:false,
+					h_align:"center",
+					space:10,
+					direction:"horizontal",
+					h_offset:0,
+					v_offset:0
+				}
+			},
+			responsiveLevels: [1240, 1024, 768, 480],
+			gridwidth:[1200, 1024, 768, 480],
+			gridheight:[950, 800, 600, 500],
+			disableProgressBar:"on"
+		});
+	}
+
+	/* Home 02 */
+	if(tpj("#rev_slider_2_1").length){
+		revapi1 = tpj("#rev_slider_2_1").show().revolution({
+			sliderType:"standard",
+			sliderLayout:"fullwidth",
+			delay:9000,
+			navigation: {
+				arrows:{
+					enable:true,
+					hide_onleave:false,
+					left : {
+						h_offset:30
+					},
+					right : {
+						h_offset:30
+					}
+				},
+				bullets: {
+					enable:true,
+					hide_onleave:false,
+					h_align:"center",
+					space:10,
+					direction:"horizontal",
+					h_offset:0,
+					v_offset:0
+				}
+			},
+			responsiveLevels: [1240, 1024, 768, 480],
+			gridwidth:[1200, 1024, 768, 480],
+			gridheight:[880, 800, 600, 500],
+			disableProgressBar:"on"
+		});
+	}
+
+	/* Home 03 */
+	if(tpj("#rev_slider_3_1").length){
+		revapi1 = tpj("#rev_slider_3_1").show().revolution({
+			sliderType:"standard",
+			sliderLayout:"fullwidth",
+			delay:9000,
+			navigation: {
+				arrows:{
+					enable:true,
+					hide_onleave:false,
+					left : {
+						h_offset:30
+					},
+					right : {
+						h_offset:30
+					}
+				},
+				bullets: {
+					enable:false
+				}
+			},
+			responsiveLevels: [1240, 1024, 768, 480],
+			gridwidth:[1200, 1024, 768, 480],
+			gridheight:[945, 800, 600, 500],
+			disableProgressBar:"on"
+		});
+	}
+
+
+});
+
+	window.onload = function () {
 
 			// Lazy Loading Images
 			const lazyloadImages = document.querySelectorAll(".lazy");
