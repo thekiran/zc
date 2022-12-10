@@ -53,6 +53,6 @@ h2,h3{margin-bottom:12px}h4,h5{color:#272b2e;margin-bottom:19px;line-height:1.5}
 .wrapp-content { width: 100vw !important }
 @media(max-width:576px){
     header{
-        padding: 25px 0;
+        padding: 35px 0;
     }
 }
