@@ -202,7 +202,9 @@ var	revapi1, tpj;
 
 		/* Home */
 		if(tpj("#rev_slider_1_1").length){
-			revapi1 = tpj("#rev_slider_1_1").show().revolution({
+			
+       
+            revapi1 = tpj("#rev_slider_1_1").show().revolution({
 				sliderType:"standard",
 				sliderLayout:"fullwidth",
 				delay:9000,
@@ -225,6 +227,8 @@ var	revapi1, tpj;
 				gridheight:[950, 800, 600, 500],
 				disableProgressBar:"on"
 			});
+
+
 		}
 
 		/* Home 02 */
