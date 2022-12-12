@@ -8973,5 +8973,10 @@ p.header_phone {
 }
 
 .rev_slider_wrapper {
+	width: 100% !important;
 	background: #2a2e31;
+}
+
+.tp-fullwidth-forcer{
+	width: 100% !important;
 }
