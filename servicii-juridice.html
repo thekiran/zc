@@ -40,8 +40,20 @@
 	<!-- JQuery -->
 	<!-- <script src="js/jquery/jquery-2.2.4.min.js"></script> -->
 
-	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/fonts.css"> -->
+
+	<link rel="preload" href="css/bundle.css" as="style">
 	<link rel="stylesheet" type="text/css" href="css/bundle.css">
+	
+		
+	<link rel="preload" href="js/rev-bundle.js" as="script">
+	<link rel="preload" href="js/jquery-plugin-bundle.js" as="script">
+	
+
+	<link rel="preload" href="img/slider/zgripcea_constantin_servicii_juridice-m.jpg" as="image">
+	<img src="img/slider/zgripcea_constantin_servicii_juridice-m.jpg" style="display: none">
+	
+	
 </head>
 
 <body>
@@ -638,9 +650,12 @@
 		</footer>
 	</div>
 
-	<script src="js/plugins-bundle.js"></script>
+	<!-- <script src="js/plugins-bundle.js"></script> -->
 
-	<!-- REVOLUTION JS FILES -->
+	<script src="js/rev-bundle.js"></script>
+	<script src="js/jquery-plugins-unimp.js"></script>
+	<script src="js/jquery-plugin-bundle.js"></script>
+	<!-- REVOLUTION JS FILES --> 
 	<!-- <script src="revolution/js/jquery.themepunch.tools.min.js"></script>
 	<script src="revolution/js/jquery.themepunch.revolution.min.js"></script> -->
 
@@ -729,11 +744,16 @@
 
 			
 			// desktop Images for slider
-			if($(window).width() > 576){
-		
-				$('.tp-bgimg').eq(0).css('backgroundImage', 'url(img/slider/zgripcea_constantin_servicii_juridice.jpg)');
-			
-			} 
+
+			setTimeout(()=>{
+
+				if($(window).width() > 576){
+					
+					$('.tp-bgimg.defaultimg').eq(0).css('backgroundImage', 'url(img/slider/zgripcea_constantin_servicii_juridice.jpg)');
+					
+				} 
+
+			},500)
 		}
 	</script>
 </body>
