@@ -73,6 +73,9 @@ window.onload = function () {
         } else{
             setTimeout(() => {
             $('.tp-bgimg').eq(1).css('backgroundImage', 'url(img/slider/slider_12.jpg)');
+
+            $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'css/fonts.css') );
+
             },10000)
         }
 
