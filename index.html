@@ -39,8 +39,8 @@
 	<!-- JQuery -->
 	<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
 
-	
-	
+
+
 	<!-- <link rel="preload" href="css/fonts.css" as="style">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css" media="print" onload="this.media='all'"> -->
 
@@ -48,39 +48,41 @@
 
 	<link rel="preload" href="css/bundle.css" as="style">
 	<link rel="stylesheet" type="text/css" href="css/bundle.css">
-	
-	
-	
+
+
+
 	<link rel="preload" href="js/rev-bundle.js" as="script">
 	<link rel="preload" href="js/jquery-plugin-bundle.js" as="script">
-	
+
 	<link rel="preload" href="img/slider/slider_11-m.jpg" as="image">
 	<img src="img/slider/slider_11-m.jpg" style="display: none">
-	
+
 	<!-- <link rel="preload" href="img/slider/slider_12-m.jpg" as="image">
 		<img src="img/slider/slider_12-m.jpg" style="display: none"> -->
-		
-	</head>
-	
-	<body>
-	
+
+</head>
+
+<body>
+
 	<!-- <link href="css/plugin-bundle.css" rel="stylesheet" media="print" onload="this.media='all'"> -->
 
 	<style>
 		/* @import url(https://fonts.googleapis.com/css2?family=Prata&family=Lato); */
-	
-			@font-face {
-				font-family: FontAwesome;
-				src: url('./fonts/fontawesome-webfont.eot?v=4.7.0');
-				src: url('./fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
-					url('./fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
-					url('./fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
-					url('./fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
-					url('./fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
-				font-weight: 400;
-				font-style: normal
-			}
+
+		@font-face {
+			font-family: FontAwesome;
+			src: url('./fonts/fontawesome-webfont.eot?v=4.7.0');
+			src: url('./fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+				url('./fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+				url('./fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+				url('./fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
+				url('./fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+			font-weight: 400;
+			font-style: normal
+		}
 	</style>
+
+	<div id="top"></div>
 
 
 	<div class="wrapp-content">
@@ -238,13 +240,13 @@
 									data-paddingright="[34,34,34,34]" data-paddingbottom="[25,25,25,25]"
 									data-paddingleft="[34,34,34,34]"
 									style="z-index: 20; white-space: nowrap; font-size: 14px; line-height: 17px; font-weight: 700; color: rgba(255, 255, 255, 1.00);font-family:Montserrat;background-color:rgba(204, 189, 153, 1);border-color:rgba(204, 189, 153, 1);border-style:solid;border-width:1px;letter-spacing:1px;">
-									
+
 									HAI SA NE CUNOASTEAM</div>
 
 							</li>
 							<li data-transition="fade" class="disableonmobile">
 								<img src="img/slider/slider_11-m.jpg" data-src="img/slider/slider_12.jpg"
-									class="rev-slidebg d-img" alt="Avocat Doina Constantin" />
+									class="rev-slidebg d-img" alt="Avocat Doina Constantin" id="dimg2" />
 								<!-- LAYER NR. 1 -->
 								<div class="tp-caption tp-resizeme with_shape" id="slide-home12-descr"
 									data-x="['left','left','left','left']" data-hoffset="['15','100','30','15']"
@@ -577,7 +579,7 @@
 				</div>
 			</div>
 
-			<div class="gt3_justice_block">
+			<div class="gt3_justice_block" style="background-color: #fff;">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6"></div>
@@ -655,7 +657,8 @@
 								<div class="contact_form">
 									<div id="note"></div>
 									<div id="fields">
-										<div id="trigger" style="height: 50px;width: 50px;background-color: transparent;"></div>
+										<div id="trigger"
+											style="height: 50px;width: 50px;background-color: transparent;"></div>
 										<form id="ajax-contact-form" action="#">
 											<div class="row">
 												<div class="col-md-6"><input type="text" name="name" value=""
@@ -669,11 +672,12 @@
 												<div class="col-md-12">
 													<textarea name="message"
 														placeholder="Ce intrebari ai pentru noi? Acordam fiecarui caz  atentia cuvenita! "></textarea>
-													
-														<div class="g-recaptcha" data-sitekey="6LfJ_GgjAAAAAMYiHAcbmkTu8pV90vVixoAQDYEm"></div>
-														<br/>
 
-														<div class="text-center"><input type="submit"
+													<div class="g-recaptcha"
+														data-sitekey="6LfJ_GgjAAAAAMYiHAcbmkTu8pV90vVixoAQDYEm"></div>
+													<br />
+
+													<div class="text-center"><input type="submit"
 															value="Trimite Mesajul"></div>
 												</div>
 											</div>
@@ -788,10 +792,15 @@
 					</div>
 				</div>
 			</div>
-			<a href="#" class="back2top" title="Back to Top">Back to Top</a>
 		</footer>
 
+		<div id="js-trigger"
+			style="position: absolute;top: 220vh;height: 50px;width: 50px;z-index: 100;background-color: transparent;">
+		</div>
+		<a href="#" class="scrolltotop" title="Back to Top">Back to Top</a>
 	</div>
+
+
 
 
 	<!-- Plugins -->
@@ -838,9 +847,9 @@
 
 
 	<!-- <script src="revolution/js/rvstart.js"></script> -->
-	<!-- <script>
+	<script>
 
-	window.onload = function () {
+		window.onload = function () {
 
 			// Lazy Loading Images
 			const lazyloadImages = document.querySelectorAll(".lazy");
@@ -860,16 +869,50 @@
 				imageObserver.observe(image);
 			});
 
-
-			// desktop Images for slider
-			if ($(window).width() > 576) {
-				$('.tp-bgimg').eq(0).css('backgroundImage', 'url(img/slider/slider_11.jpg)');
-				$('.tp-bgimg').eq(1).css('backgroundImage', 'url(img/slider/slider_12.jpg)');
-
-			}
-
 		}
-	</script> -->
+
+
+		const jstr = document.querySelector('#js-trigger')
+
+		const TriggerObserver = new IntersectionObserver(function (entries, observer) {
+			entries.forEach(function (entry) {
+				if (entry.isIntersecting) {
+
+					const script = document.createElement('script')
+					script.src = 'js/plugins-bundle.js';
+
+					document.head.appendChild(script);
+
+					// desktop Images for slider
+					document.querySelector('#dimg').src = document.querySelector('#dimg').dataset.src
+					document.querySelector('#dimg2').src = document.querySelector('#dimg2').dataset.src
+
+
+					$('.disableonmobile').first().css('display', 'block')
+
+					TriggerObserver.unobserve(jstr);
+				}
+			});
+		});
+
+		TriggerObserver.observe(jstr);
+
+		// desktop Images for slider
+		if ($(window).width() > 576) {
+
+			document.querySelector('#dimg').src = document.querySelector('#dimg').dataset.src
+			document.querySelector('#dimg2').src = document.querySelector('#dimg2').dataset.src
+	
+		} else {
+			setTimeout(() => {
+
+				$('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'css/fonts.css'));
+
+			}, 10000)
+		}
+
+	</script>
+
 </body>
 
 </html>

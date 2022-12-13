@@ -158,21 +158,10 @@ window.onload = function () {
         });
 
 
-        // desktop Images for slider
-        if ($(window).width() > 576) {
-            $('.tp-bgimg').eq(0).css('backgroundImage', 'url(img/slider/slider_11.jpg)');
-            $('.tp-bgimg').eq(1).css('backgroundImage', 'url(img/slider/slider_12.jpg)');
-
-        } else{
-            setTimeout(() => {
-            $('.tp-bgimg').eq(1).css('backgroundImage', 'url(img/slider/slider_12.jpg)');
-
-            $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'css/fonts.css') );
-
-            },10000)
-        }
+ 
 
     }
+
 
 
     const loadFont = (url) => {
@@ -196,3 +185,28 @@ window.onload = function () {
       }
       
       loadFont('https://fonts.googleapis.com/css2?family=Prata&family=Lato');
+
+
+	
+	$('.scrolltotop').hide();
+	
+	function myFunc(){
+		
+		if(window.pageYOffset > 200){
+			$('.scrolltotop').show();
+		} else {
+			$('.scrolltotop').hide();
+		}
+		
+	}
+
+window.addEventListener("scroll", function () {
+	myFunc();
+}, false);
+
+
+//Click event to scroll to top
+$('.scrolltotop').click(function () {
+	$('html, body').animate({ scrollTop: 0 }, 360);
+	return false;
+});

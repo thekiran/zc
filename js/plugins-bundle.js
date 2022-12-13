@@ -440,3 +440,7 @@ $(window).on('resize', function(){
 	$('.wrapp-content').css('width', '100vw !important');
 });
 
+
+
+
+
