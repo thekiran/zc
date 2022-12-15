@@ -172,7 +172,7 @@ h2,h3{margin-bottom:12px}h4,h5{color:#272b2e;margin-bottom:19px;line-height:1.5}
 
 }
 
-@media(max-width:450px){
+@media(max-width:500px){
 	#slide-home11-title{
 		font-size: 55px !important;
 	}
@@ -182,3 +182,8 @@ h2,h3{margin-bottom:12px}h4,h5{color:#272b2e;margin-bottom:19px;line-height:1.5}
 	}
 }
 
+@media(max-width:400px){
+	#slide-home11-title{
+		font-size: 13vw !important;
+	}
+}

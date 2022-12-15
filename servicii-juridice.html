@@ -184,7 +184,7 @@
 							<ul>
 								<li data-transition="fade">
 									<img src="img/slider/zgripcea_constantin_servicii_juridice-m.jpg" class="rev-slidebg"
-										alt="Zgripcea si Constantin Servicii Juridice" />
+										id="dimg" alt="Zgripcea si Constantin Servicii Juridice" />
 									<!-- LAYER NR. 1 -->
 									<div class="tp-caption tp-resizeme with_shape" id="slide-home11-descr"
 										data-x="['right','right','right','right']" data-hoffset="['15','100','30','15']"
@@ -769,6 +769,21 @@
 
 			},500)
 		}
+
+		var dwidth = jQuery(window).width();
+		jQuery(window).bind('resize', function(e){
+
+			var wwidth = jQuery(window).width();
+
+			if(dwidth!==wwidth){
+			dwidth = jQuery(window).width();
+
+			if (window.RT) clearTimeout(window.RT);
+			window.RT = setTimeout(function(){
+				this.location.reload(false); /* false to get page from cache */
+			}, 1000);
+		}
+		});
 	</script>
 </body>
 
