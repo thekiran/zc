@@ -35,6 +35,9 @@
 	<link rel="preload" href="css/bundle.css" as="style">
 	<link rel="stylesheet" type="text/css" href="css/bundle.css">
 
+	<style>
+		body{ background-color: #fff; }
+	</style>
 </head>
 
 <body>
@@ -157,7 +160,8 @@
 				<div class="row">
 					<div class="col-lg-6 col-xl-6">
 						<div class="img-wrapp">
-							<img class="dimg" src="img/front_img/echipa_zgripcea_constantin-m.jpg" alt="">
+							<!-- <img class="lazy" data-src="img/front_img/echipa_zgripcea_constantin.jpg" alt=""> -->
+							<img class="dimg" src="img/front_img/echipa_zgripcea_constantin-m.jpg" data-src="img/front_img/echipa_zgripcea_constantin.jpg" alt="">
 						</div>
 					</div>
 					<div class="col-lg-6 col-xl-6">
@@ -486,14 +490,29 @@
 			
 			// desktop Images for slider
 			if($(window).width() > 576){
-				$('.dimg').css('backgroundImage', 'url(img/front_img/echipa_zgripcea_constantin.jpg)');
-				
+				// $('.dimg').eq(0).css('backgroundImage', 'url(img/front_img/echipa_zgripcea_constantin.jpg)');
+			
+				document.querySelector('.dimg').src = document.querySelector('.dimg').dataset.src
 			} 
 
-
-
-
 		}
+
+
+		var dwidth = jQuery(window).width();
+		jQuery(window).bind('resize', function(e){
+
+			var wwidth = jQuery(window).width();
+
+			if(dwidth!==wwidth){
+			dwidth = jQuery(window).width();
+
+			if (window.RT) clearTimeout(window.RT);
+			window.RT = setTimeout(function(){
+				this.location.reload(false); /* false to get page from cache */
+			}, 1000);
+		}
+		});
+
 	</script>
 </body>
 
