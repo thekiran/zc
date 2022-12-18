@@ -122,10 +122,6 @@ h2,h3{margin-bottom:12px}h4,h5{color:#272b2e;margin-bottom:19px;line-height:1.5}
 		display: none;
 	}
 
-	body{
-		background-color: #2a2e31;
-	}
-
 	.slider-wrapp{
 		/* height: 600px; */
 		background-color: #383b3d; 
@@ -134,13 +130,39 @@ h2,h3{margin-bottom:12px}h4,h5{color:#272b2e;margin-bottom:19px;line-height:1.5}
 	#rev_slider_1_1 ul,
 	#rev_slider_1_1 li,
 	#dimg{
-		/* height: 100%; */
 		height: 450px;
-
 	}
 	#dimg{
 		position: absolute;
     	z-index: -1;
+		object-fit: cover;
+	}
+
+	.first-slide{
+		display: block;
+
+		visibility: visible;
+		opacity: 1;
+		transition: opacity 1s linear;
+	}
+	
+	.second-slide{
+		display: block;
+
+		visibility: visible;
+		opacity: 1;
+		transition: opacity 1s linear;
+	}
+
+	/* .first-slide.hide{ display: none; } */
+	.first-slide.hide{ visibility: hidden;opacity: 0;position: absolute; }
+	/* .second-slide.hide{ display: none; } */
+	.second-slide.hide{ visibility: hidden;opacity: 0;position: absolute;}
+
+	.second-slide img{
+		height: 450px;
+		position: absolute;
+		z-index: -1;
 		object-fit: cover;
 	}
 
@@ -150,40 +172,70 @@ h2,h3{margin-bottom:12px}h4,h5{color:#272b2e;margin-bottom:19px;line-height:1.5}
 		padding-left: 0 10px;
 		padding-right: 0 10px;
 	} */
-	#slide-home11-descr{
+
+	.first-slide.hide #slide-home11-descr,
+	.second-slide.hide #slide-home12-descr{
+		transform: translateY(100%);
+		transition: none;
+	}
+
+	.first-slide #slide-home11-descr,
+	.second-slide #slide-home12-descr{
 		padding: 4em 10px 10px 10px;
 		font-size: 20px;
+
+		transition: 1s;
+		transform: translateY(0);
 	}
-	#slide-home11-title{
+
+
+	.first-slide.hide #slide-home11-title, 
+	.second-slide.hide #slide-home12-title{
+		
+		transform: translateY(50%);
+		transition: none;
+	}
+	.first-slide #slide-home11-title, 
+	.second-slide #slide-home12-title{
+		transition: 1s;
+		transform: translateY(0);
+	}
+
+
+
+	#slide-home11-title, #slide-home12-title{
 		font-size: 69px;
 		padding: 0px 20px;
 	}
-	#slide-home11-btn{
+
+
+	#slide-home11-btn, #slide-home12-btn{
 		padding:25px 34px;
 		width: max-content;
 		margin: 10px 20px;
 	}
 
-	#slide-home11-descr i,
-	#slide-home11-title i,
-	#slide-home11-btn i{
+	#slide-home11-descr i, #slide-home12-descr,
+	#slide-home11-title i, #slide-home12-title i,
+	#slide-home11-btn i, #slide-home12-btn i{
 		margin: 10px 0;
 	}
 
 }
 
 @media(max-width:500px){
-	#slide-home11-title{
+	#slide-home11-title, #slide-home12-title {
 		font-size: 55px !important;
 	}
 
-	#slide-home11-descr{
+	#slide-home11-descr, #slide-home12-descr{
 		font-size: 15px !important;
 	}
 }
 
 @media(max-width:400px){
-	#slide-home11-title{
+	#slide-home11-title,  #slide-home12-title {
 		font-size: 13vw !important;
 	}
 }
+

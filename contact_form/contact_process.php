@@ -48,11 +48,16 @@ $error .= "Please enter your message. It should have at least 15 characters.<br 
 
 if(!$error)
 {
-$mail = mail(CONTACT_FORM, $subject, $message,
-     "From: ".$name." <".$email.">\r\n"
-    ."Reply-To: ".$email."\r\n"
-    ."X-Mailer: PHP/" . phpversion());
+$mail = mail(
+    
+    CONTACT_FORM, $subject, $message,
+     
+    "From: ".$name." <".$email.">\r\n" ."Reply-To: ".$email."\r\n" ."X-Mailer: PHP/" . phpversion()
+    
+    );
 
+
+    
 
 if($mail)
 {

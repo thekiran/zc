@@ -69,6 +69,7 @@
 	<style>
 		/* @import url(https://fonts.googleapis.com/css2?family=Prata&family=Lato); */
 
+
 		@font-face {
 			font-family: FontAwesome;
 			src: url('./fonts/fontawesome-webfont.eot?v=4.7.0');
@@ -79,6 +80,14 @@
 				url('./fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
 			font-weight: 400;
 			font-style: normal
+		}
+
+		@media(max-width:576px) {
+
+			body {
+				background-color: #2a2e31;
+			}
+
 		}
 	</style>
 
@@ -198,8 +207,8 @@
 				<div class="rev_slider_wrapper">
 					<div id="rev_slider_1_1" data-version="5.0">
 						<ul>
-							<li data-transition="fade">
-								<img src="img/slider/slider_11-m.jpg" data-src="img/slider/slider_11.jpg"
+							<li data-transition="fade" class="first-slide">
+								<img src="img/slider/slider_11-m-min.jpg" data-src="img/slider/slider_11.jpg"
 									class="rev-slidebg" id="dimg" alt="Avocat Gabriel Zgripcea" />
 								<!-- LAYER NR. 1 -->
 								<div class="tp-caption tp-resizeme with_shape" id="slide-home11-descr"
@@ -244,8 +253,8 @@
 									HAI SA NE CUNOASTEAM</div>
 
 							</li>
-							<li data-transition="fade" class="disableonmobile">
-								<img src="img/slider/slider_11-m.jpg" data-src="img/slider/slider_12.jpg"
+							<li data-transition="fade" class="second-slide hide">
+								<img src="img/slider/slider_12-m-min.jpg" data-src="img/slider/slider_12.jpg"
 									class="rev-slidebg d-img" alt="Avocat Doina Constantin" id="dimg2" />
 								<!-- LAYER NR. 1 -->
 								<div class="tp-caption tp-resizeme with_shape" id="slide-home12-descr"
@@ -439,7 +448,7 @@
 				</div>
 			</div>
 
-			<div class="container">
+			<div class="container" style="background-color: #fff;">
 				<div class="row">
 					<div class="col">
 						<div class="indents-59"></div>
@@ -871,35 +880,53 @@
 
 		}
 
-		
+
 		// desktop Images for slider
 		if ($(window).width() > 576) {
-			
+
 			document.querySelector('#dimg').src = document.querySelector('#dimg').dataset.src
 			document.querySelector('#dimg2').src = document.querySelector('#dimg2').dataset.src
-			
+
 		} else {
+
+
+			function slidefirstimg() {
+
+				document.querySelector('.first-slide').classList.add('hide')
+				document.querySelector('.second-slide').classList.remove('hide')
 			
+			}
+
+			function slidesecimg() {
+
+				document.querySelector('.first-slide').classList.remove('hide')
+				document.querySelector('.second-slide').classList.add('hide')
+			
+			}
+
+			setInterval(slidefirstimg, 8000); 
+			setInterval(slidesecimg, 16000); 
+
 			setTimeout(() => {
 				$('head').append($('<link rel="stylesheet" type="text/css" />').attr('href', 'css/fonts.css'));
 			}, 10000)
-		
+
 		}
 
-		
+
 		var dwidth = jQuery(window).width();
-		jQuery(window).bind('resize', function(e){
+		jQuery(window).bind('resize', function (e) {
 
 			var wwidth = jQuery(window).width();
 
-			if(dwidth!==wwidth){
-			dwidth = jQuery(window).width();
+			if (dwidth !== wwidth) {
+				dwidth = jQuery(window).width();
 
-			if (window.RT) clearTimeout(window.RT);
-			window.RT = setTimeout(function(){
-				this.location.reload(false); /* false to get page from cache */
-			}, 1000);
-		}
+				if (window.RT) clearTimeout(window.RT);
+				window.RT = setTimeout(function () {
+					this.location.reload(false); /* false to get page from cache */
+				}, 500);
+			}
 		});
 
 	</script>
