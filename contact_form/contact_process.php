@@ -13,7 +13,7 @@ include 'email_validation.php';
 $name = stripslashes($_POST['name']);
 $email = trim($_POST['email']);
 $phone = trim($_POST['phone']);
-$subject = $_POST['subject'];
+$subject = 'subject';
 $message = stripslashes($_POST['message']);
 
 
@@ -109,10 +109,8 @@ $headers .= "From: ".$name." <".$email.">\r\n" ."Reply-To: ".$email."\r\n" ."X-M
 
 if(!$error)
 {
-// $mail = mail( CONTACT_FORM, $subject, $mailbody, $headers );
+$mail = mail( CONTACT_FORM, $subject, $mailbody, $headers );
 
-echo(CONTACT_FORM)
-echo" $subject, $mailbody, $headers "
 
 // $mail = mail(
     
