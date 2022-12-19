@@ -50,6 +50,8 @@ $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 // More headers
 $headers .= 'From: <'.$from.'>' . "\r\n";
+
+
    if(mail($receiver,$subject,$message,$headers))  
    {
 	   //Success Message
